@@ -29,13 +29,12 @@
 						$scope.saving = true;
 						$scope.error = false;
 						newUser = new User(); //create a new object
-
-						newUser.set("email", $scope.emailAddress);
-						newUser.set("password", $scope.emailAddress);
-						newUser.set("username", $scope.emailAddress);
 						if(isFacebook) {
 							facebookSignup(saveUser);
 						} else {
+							newUser.set("email", $scope.emailAddress);
+							newUser.set("password", $scope.emailAddress);
+							newUser.set("username", $scope.emailAddress);
 							saveUser();
 						}
 					} else {
@@ -66,10 +65,11 @@
 					function facebookSignup(onSuccess) {
 						if(!Parse.FacebookUtils.isLinked(Parse.User.current()))
 						{
-							Parse.FacebookUtils.logIn(null, {
+							Parse.FacebookUtils.logIn('email, user_location', {
 								success: function(user) {
 									if (!user.existed()) {
 										alert("User signed up and logged in through Facebook!");
+										$scope.emailAddress = user.get('authData').facebook.email;
 										if(onSuccess)
 											onSuccess();
 									} else {
