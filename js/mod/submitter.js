@@ -68,16 +68,18 @@
 							Parse.FacebookUtils.logIn('email, user_location', {
 								success: function(user) {
 									if (!user.existed()) {
-										alert("User signed up and logged in through Facebook!");
-										$scope.emailAddress = user.get('authData').facebook.email;
-										if(onSuccess)
-											onSuccess();
+										console.log("User signed up and logged in through Facebook!");
+										FB.api('/me', function(response) {
+											$scope.emailAddress = response.email;
+											if(onSuccess)
+												onSuccess();
+										});
 									} else {
-										alert("User logged in through Facebook!");
+										console.log("User logged in through Facebook!");
 									}
 								},
 								error: function(user, error) {
-									alert("User cancelled the Facebook login or did not fully authorize.");
+									alert("Uh oh, looks like you cancelled the Facebook login or it did not fully authorize.");
 								}
 							});
 						}
