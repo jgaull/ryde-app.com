@@ -22,35 +22,33 @@
 
 				//create a new entry
 				$scope.submit = function(isFacebook) {
-					var User = Parse.Object.extend("_User"),
-					newUser;
+					var User = Parse.Object.extend("_User");
 
 					if($scope.emailAddress && $scope.emailAddress || isFacebook) {
 						$scope.saving = true;
 						$scope.error = false;
-						newUser = new User(); //create a new object
 						if(isFacebook) {
 							facebookSignup(saveUser);
 						} else {
-							saveUser();
+							saveUser(new User());
 						}
 					} else {
 						alert('Oops, please enter your email!');
 					}
 
-					function saveUser() {
-						newUser.set("email", $scope.emailAddress);
-						newUser.set("password", $scope.emailAddress);
-						newUser.set("username", $scope.emailAddress);
-						newUser.save(null, {
-							success: function(newUser) {
+					function saveUser(userToSave) {
+						userToSave.set("email", $scope.emailAddress);
+						userToSave.set("password", $scope.emailAddress);
+						userToSave.set("username", $scope.emailAddress);
+						userToSave.save(null, {
+							success: function(savedUser) {
 								console.log("The object was saved successfully.");
 								$scope.submitted = true;
 								$scope.saving = false;
 								$scope.$digest();
-								$.jStorage.set('userId', newUser.id);
+								$.jStorage.set('userId', savedUser.id);
 							},
-							error: function(newUser, error) {
+							error: function(savedUser, error) {
 								$scope.saving = false;
 								$scope.error = true;
 								var message = "There was a problem with your email, please try again.";
@@ -72,7 +70,7 @@
 										FB.api('/me', function(response) {
 											$scope.emailAddress = response.email;
 											if(onSuccess)
-												onSuccess();
+												onSuccess(user);
 										});
 									} else {
 										console.log("User logged in through Facebook!");
