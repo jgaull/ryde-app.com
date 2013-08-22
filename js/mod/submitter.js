@@ -64,7 +64,7 @@
 					}
 
 					function facebookSignup(onSuccess) {
-						if(!Parse.FacebookUtils.isLinked(newUser))
+						if(!Parse.FacebookUtils.isLinked(Parse.User.current()))
 						{
 							Parse.FacebookUtils.logIn(null, {
 								success: function(user) {
@@ -89,6 +89,20 @@
 					$scope.emailAddress = '';
 					$scope.submitted = false;
 					$.jStorage.set('userId', '');
+				};
+				$scope.unlinkFacebook = function() {
+					if(Parse.User.current() !== null) {
+						Parse.FacebookUtils.unlink(Parse.User.current(), {
+							success: function(user) {
+								alert("Facebook disconnected!");
+							},
+							error: function(user, error) {
+								alert("Facebook disconnect failed!");
+							}
+						});
+					} else {
+						alert('no current user');
+					}
 				};
 			},
 			link: function($scope, $element, $attr) {
