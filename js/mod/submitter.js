@@ -11,9 +11,14 @@
 			replace: true,
 			scope: true,
 			controller: function($scope, $rootScope, $element) {
-				$scope.submitted = false;
 				$scope.saving = false;
 				$scope.error = false;
+
+				var userId = $.jStorage.get('userId');
+				if(userId !== undefined && userId !== null && userId.length > 0)
+					$scope.submitted = true;
+				else
+					$scope.submitted = false;
 
 				//create a new entry
 				$scope.submit = function(isFacebook) {
@@ -44,6 +49,7 @@
 								$scope.submitted = true;
 								$scope.saving = false;
 								$scope.$digest();
+								$.jStorage.set('userId', newUser.id);
 							},
 							error: function(newUser, error) {
 								$scope.saving = false;
@@ -79,6 +85,7 @@
 				$scope.resetForm = function() {
 					$scope.emailAddress = '';
 					$scope.submitted = false;
+					$.jStorage.set('userId', '');
 				};
 			},
 			link: function($scope, $element, $attr) {
