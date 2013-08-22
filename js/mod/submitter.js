@@ -33,7 +33,7 @@
 							saveUser(new User());
 						}
 					} else {
-						alert('Oops, please enter your email!');
+						alert('Please enter a valid email address.');
 					}
 
 					function saveUser(userToSave) {
@@ -51,7 +51,7 @@
 							error: function(savedUser, error) {
 								$scope.saving = false;
 								$scope.error = true;
-								var message = "There was a problem with your email, please try again.";
+								var message = "Your email is not valid or you're already signed up.";
 								// $scope.errorMessage = "There was a problem with your email, please try again.";
 								alert(message);
 								$scope.$digest();
@@ -77,7 +77,7 @@
 									}
 								},
 								error: function(user, error) {
-									alert("Uh oh, looks like you cancelled the Facebook login or it did not fully authorize.");
+									alert("Error connecting to Facebook, please try again.");
 								}
 							});
 						}
