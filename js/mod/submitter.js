@@ -64,7 +64,7 @@
 					}
 
 					function facebookSignup(onSuccess) {
-						if(Parse.FacebookUtils.isLinked(newUser))
+						if(!Parse.FacebookUtils.isLinked(newUser))
 						{
 							Parse.FacebookUtils.logIn(null, {
 								success: function(user) {
