@@ -1,0 +1,26 @@
+<div id="answer" class="span12 container">
+	<style type="text/css">
+		#answer {
+			text-align: center;
+		}
+		#answer .consumableName {
+			font-family: 'Museo Sans', sans;
+			font-size: 6em;
+			color: white;
+			line-height: 100%;
+			margin-top: 10%;
+			text-align: center;
+			border-bottom: 1px solid #B0F355;
+		}
+		#answer .consumableDesc {
+			font-family: 'Museo Sans', sans;
+			font-size: 2em;
+			color: white;
+			text-align: center;
+			margin-top: 10%;
+			line-height: 1.25em;
+		}
+	</style>
+	<h1 class="consumableName" ng-show="state.consumableRelation.length > 0">{{state.consumableRelation}}</h1>
+	<div class="consumableDesc">{{state.consumableDesc}}</div>
+</div>

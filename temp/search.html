@@ -1,0 +1,105 @@
+<div id="search">
+	<style type="text/css">
+		#search {
+			margin-top: 2em;
+			position: relative;
+		}
+
+		#search.active {
+			margin: 0;
+		}
+
+		#search h1 {
+			font-weight: 700;
+			color: #B0F355;
+			font-size: 2.75em;
+			line-height: 1em;
+			margin: 0;
+		}
+
+		#search.active h1 {
+			display: none;
+		}
+
+		input:active,
+		input:focus{
+			/*border:none;*/
+			outline:none;
+		}
+
+		.search-bar {
+			font-family: "Arvo";
+			font-size: 2.75em;
+			font-weight: 700;
+			color: white;
+			background: transparent;
+			border: none;
+			border-bottom: 1px dashed #B0F355;
+			box-shadow: none;
+			line-height: 1.5em;
+			width: 100%;
+			height: 100%;
+			padding-right: 30px;
+			box-sizing: border-box;
+			margin-bottom: -1px;/*hack for typeahead*/
+		}
+
+		#search.active .search-bar {
+			font-size: 1.75em;
+			background: #000000;
+			text-align: center;
+			padding: 1em;
+			margin: 0;
+			border: none;
+		}
+
+		#search .questionMark {
+			font-family: "Arvo";
+			font-size: 2.75em;
+			font-weight: 700;
+			color: #B0F355;
+			position: relative;
+			bottom: 38px;
+			right: 0px;
+			height: 0;
+		}
+
+		#search.active .questionMark {
+			display: none;
+		}
+
+		#search ul {
+			text-align: center;
+			list-style: none;
+			margin: 0;
+		}
+		#search .typeahead {
+		    width: 100%;
+		    box-sizing: border-box;
+		    position: absolute;
+		    bottom: 0;
+		    left: 0;
+		    border-radius: 0;
+		    padding: 0;
+		    font-size: 1em;
+		}
+
+		#search .typeahead li{
+		    background-color: white;
+		    text-align: left;
+		}
+
+		#search .typeahead li.active{
+		    background-color: #B0F355;
+		}
+
+		#search .typeahead .active a, .typeahead a{
+		    line-height: 2em;
+		    background: none;
+		    color: #333333;
+		}
+	</style>
+	<h1>Can I eat</h1>
+	<input class="search-bar" tabindex=1 class="pull-left" autocapitalize="off" ng-model="state.consumableName">
+	<span class="questionMark pull-right">?</span>
+</div>

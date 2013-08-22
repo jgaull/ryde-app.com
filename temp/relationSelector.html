@@ -1,0 +1,9 @@
+<div>
+    <div ng-repeat="diet in diets.models">
+        <label>{{diet.get('name')}}</label>
+        <select id="{{diet.id}}_relation" diet-props ng-options="relation.get('name') for relation in relations.models">
+            <option value="">Relation</option>
+        </select>
+        <input id="{{diet.id}}_reason" type="text" placeholder="reason" />
+    </div>
+</div>

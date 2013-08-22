@@ -1,0 +1,43 @@
+<div id="submitter">
+	<div ng-hide="submitted">
+		<h2>Sign up for early access</h2>
+		<button type="button" 
+				class="btn btn-primary btn-lg fbConnect"
+				ng-click="submit(true)">
+			Facebook Connect
+		</button>
+		<div class="orSeparator">
+			<span class="orBg">or</span>
+		</div>
+		<form ng-submit="submit()" 
+				ng-model="submissionForm" 
+				class="form-inline"
+				role="form">
+			<div class="form-group">
+				<label class="sr-only" 
+						for="formEmail">
+					Your Email Address
+				</label>
+				<input id="formEmail"
+						class="form-control" 
+						ng-model="emailAddress" 
+						tabindex=1 
+						placeholder="Email"/>
+			</div>
+			<button id="formSubmit"
+					type="submit" 
+					class="btn btn-danger">
+				Submit
+			</button>
+		</form>
+
+	</div>
+	<div ng-show="submitted">
+		<p>Thank you! You will be notified when your account is ready.</p>
+		<a ng-click="resetForm()">Sign up with a different email addres</a>
+	</div>
+	<!-- <div ng-show="error && !saving">
+		<p>{{errorMessage}}</p>
+	</div> -->
+	<div class="clearfix"></div>
+</div>

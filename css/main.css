@@ -1,0 +1,171 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+@media (max-width: 320px), (-webkit-max-device-pixel-ratio: 1), (max-resolution: 163dpi) {
+	html{
+		background: url(../img/bgSmall.jpg) no-repeat center center fixed;
+	}
+}
+
+@media (min-width: 321px) {
+	html{
+		background: url(../img/bg.jpg) no-repeat center center fixed;
+	}
+}
+
+html { 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	background: transparent;
+	padding: 0;
+	height: 100%;
+	font-family: 'Helvetica', serif;
+	color: white;
+}
+
+.main {
+	width: 250px;
+	margin: 0 auto;
+}
+
+@media (max-width: 320px) {
+	.main {
+		max-width: 90%;
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: 768px) {
+	.main {
+		max-width: 90%;
+		margin: 0 auto 0 30%;
+	}
+}
+
+/*@media (max-width: @screen-phone-max) { ... }
+@media (min-width: @screen-sm) and (max-width: @screen-sm-max) { ... }
+@media (min-width: @screen-md) and (max-width: @screen-md-max) { ... }
+@media (min-width: @screen-lg) { ... }*/
+
+#header {
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	background: none;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+	text-align: left;
+}
+
+#header h1 {
+	font-size: 24px;
+}
+
+@media (max-width: 240px) {
+	#header h1 {
+		font-size: 70%;
+	}
+}
+@media (max-width: 320px), (-webkit-max-device-pixel-ratio: 1), (max-resolution: 163dpi) {
+	.logo{
+		background-image: url(../img/logoSmall.png);
+		background-size: contain;
+	}
+}
+
+@media (min-width: 321px), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 163dpi) {
+	.logo{
+		background-image: url(../img/logo.png);
+		background-size: 177px 55px;
+	}
+}
+
+.logo {
+	background-repeat: no-repeat;
+	background-position: top left;
+	width: 177px;
+	height: 55px;
+	max-width: 75%;
+	display: block;
+}
+
+#submitter {
+	float: none;
+	display: block;
+	margin: 0 auto;
+	border-radius: 8px;
+	box-sizing: border-box;
+	text-align: center;
+	color: white;
+}
+
+h2 {
+	text-align: left;
+	font-size: 18px;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+	font-weight: normal;
+}
+
+.fbConnect {
+	width: 100%;
+	border-radius: 0;
+	height: 43px;
+	background-image: url('../img/taptappitytaptap.png');
+	background-size: 16px;
+	background-position: 93% 50%;
+	background-repeat: no-repeat;
+	text-align: left;
+	padding-left: 20px;
+}
+
+@media (max-width: 230px) {
+	.fbConnect {
+		background-image: none;
+		text-align: center;
+	}
+}
+
+.orSeparator {
+	font-size: 12px;
+	text-align: center;
+	margin: 10px 0;
+	font-weight: normal;
+}
+
+.orBg {
+	background-color: #333333;
+	background-color:rgba(0, 0, 0, 0.4);
+	border-radius: 15px;
+	padding: 3px 6px 5px 6px;
+}
+
+.form-group {
+	margin: 0;
+	width: 70%;
+	float: left;
+}
+
+#formEmail {
+	height: 43px;
+}
+
+#formSubmit {
+	width: 30%;
+	float: left;
+	height: 43px;
+	font-weight: bold;
+}
+
+#formEmail, #formSubmit {
+	border-radius: 0;
+}

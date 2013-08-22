@@ -1,0 +1,48 @@
+<div id="selector" class="span12">
+	<style type="text/css">
+		#selector {
+			margin: 1.75em auto 0 auto;
+			float: none;
+			color: white;
+		}
+
+		#selector .dropdown-toggle {
+			text-decoration: none;
+			color: white;
+			line-height: 30px;
+			/*font-style: italic;*/
+			font-weight: 700;
+			font-size: 1.35em;
+		}
+
+		#selector .header {
+			text-align: center;
+			list-style: none;
+			margin: 0;
+			border-bottom: #b9f31d 0.2em solid;
+			padding-bottom: 2.5%;
+		}
+
+		#selector .header li {
+			display: inline-block;
+			position: relative;
+		}
+
+		#selector .dropdown-menu {
+			position: absolute;
+			top: 100%;
+		}
+	</style>
+	<ul class="header">
+		<li>
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#" tabindex=2>
+				<i>{{state.dietData.get('name')}}</i>
+			</a>
+			<ul class="dropdown-menu">
+				<li ng-repeat="diet in diets.models">
+					<a ng-click="setSelection(diet)">{{diet.get('name')}}</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
