@@ -4,21 +4,24 @@ function trackpage(id)
 	console.log("start trackpage: " + id);
 	console.log("end trackpage: " + id);
 }
+
+window.fbAsyncInit = function() {
+	Parse.initialize("GtW060KQQ2rmEyFqKXMqjyexpqJ5DvH7tm8rf3e7", "UoCaXIRVOhc7X6Ep9DNQ9WDkmuZCnAaJK3OGvvY4");
+	// init the FB JS SDK
+	Parse.FacebookUtils.init({
+		appId      : '101998946674227',                        // App ID from the app dashboard
+		channelUrl : '//ryde-app.com/channel.html', // Channel file for x-domain comms
+		status     : true, // check login status
+		cookie     : true, // enable cookies to allow Parse to access the session
+		xfbml      : true  // parse XFBML
+	});
+}
 (function(angular) {
 	var ng = angular.module('ng');
 	var rydeapp = angular.module('rydeapp', ['ng']);
 
 	rydeapp.run(function($rootScope) {
 		console.log("App Launching");
-		Parse.initialize("GtW060KQQ2rmEyFqKXMqjyexpqJ5DvH7tm8rf3e7", "UoCaXIRVOhc7X6Ep9DNQ9WDkmuZCnAaJK3OGvvY4");
-		// init the FB JS SDK
-		Parse.FacebookUtils.init({
-			appId      : '101998946674227',                        // App ID from the app dashboard
-			channelUrl : '//ryde-app.com/channel.html', // Channel file for x-domain comms
-			status     : true, // check login status
-			cookie     : true, // enable cookies to allow Parse to access the session
-			xfbml      : true  // parse XFBML
-		});
 	});
 
 	ng.factory('getLocal', ['connectivity', function(connectivity){
