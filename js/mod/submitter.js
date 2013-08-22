@@ -32,9 +32,6 @@
 						if(isFacebook) {
 							facebookSignup(saveUser);
 						} else {
-							newUser.set("email", $scope.emailAddress);
-							newUser.set("password", $scope.emailAddress);
-							newUser.set("username", $scope.emailAddress);
 							saveUser();
 						}
 					} else {
@@ -42,6 +39,9 @@
 					}
 
 					function saveUser() {
+						newUser.set("email", $scope.emailAddress);
+						newUser.set("password", $scope.emailAddress);
+						newUser.set("username", $scope.emailAddress);
 						newUser.save(null, {
 							success: function(newUser) {
 								console.log("The object was saved successfully.");
