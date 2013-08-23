@@ -152,7 +152,8 @@ h2 {
 	background-position: 93% 50%;
 	background-repeat: no-repeat;
 	text-align: left;
-	padding-left: 20px;
+	padding-left: 26px;
+	font-family: 'amblebold';
 }
 
 /* < iPhone */
@@ -210,17 +211,35 @@ h2 {
 
 #formEmail {
 	height: 43px;
+	font-family: 'ambleregular';
+}
+
+#formEmail::-webkit-input-placeholder {
+   color: #d8d7d7;
+}
+
+#formEmail:-moz-placeholder { /* Firefox 18- */
+   color: #d8d7d7;  
+}
+
+#formEmail::-moz-placeholder {  /* Firefox 19+ */
+   color: #d8d7d7;  
+}
+
+#formEmail:-ms-input-placeholder {  
+   color: #d8d7d7;  
 }
 
 #formSubmit {
 	width: 30%;
 	float: left;
 	height: 43px;
-	font-weight: bold;
+	font-family: 'amblebold';
 }
 
 #formEmail, #formSubmit {
 	border-radius: 0;
+	text-align: center;
 }
 
 @media (min-width: 421px) {
