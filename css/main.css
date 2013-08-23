@@ -75,7 +75,7 @@ body {
 /* iPhone */
 @media (max-width: 320px) {
 	#header h1 {
-	font-size: 27px;
+	font-size: 33px;
 	}
 }
 
@@ -89,8 +89,8 @@ body {
 .logo {
 	background-repeat: no-repeat;
 	background-position: top left;
-	width: 177px;
-	height: 55px;
+		width: 303px;
+		height: 91px;
 	display: block;
 }
 
@@ -108,6 +108,7 @@ body {
 		background-image: url(../img/logo.png);
 		width: 303px;
 		height: 91px;
+		max-width: 75%;
 	}
 }
 
@@ -117,29 +118,28 @@ body {
 	margin: 0 auto;
 	border-radius: 8px;
 	box-sizing: border-box;
-	text-align: center;
+	text-align: left;
 	color: white;
 }
 
 h2 {
 	text-align: left;
-	font-size: 34px;
 	text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
 	font-weight: normal;
-	margin-bottom: 20px;
 }
 
 /* iPhone */
 @media (max-width: 320px) {
-	#header h2 {
+	h2 {
 		font-size: 18px;
 	}
 }
 
 /* > iPhone */
 @media (min-width: 421px) {
-	#header h2 {
+	h2 {
 		margin-bottom: 20px;
+		font-size: 34px;
 	}
 }
 
