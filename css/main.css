@@ -4,6 +4,7 @@
    Author's custom styles
    ========================================================================== */
 
+/* iPhone */
 @media (max-width: 320px), (-webkit-max-device-pixel-ratio: 1), (max-resolution: 163dpi) {
 	html{
 		background: url(../img/bgSmall.jpg) no-repeat center center fixed;
@@ -38,6 +39,7 @@ body {
 	margin: 0 auto;
 }
 
+/* iPhone */
 @media (max-width: 320px) {
 	.main {
 		max-width: 90%;
@@ -47,7 +49,6 @@ body {
 
 @media (min-width: 768px) {
 	.main {
-		max-width: 90%;
 		margin: 0 auto 0 30%;
 	}
 }
@@ -71,11 +72,14 @@ body {
 	font-size: 24px;
 }
 
+/* < iPhone */
 @media (max-width: 240px) {
 	#header h1 {
 		font-size: 70%;
 	}
 }
+
+/* iPhone */
 @media (max-width: 320px), (-webkit-max-device-pixel-ratio: 1), (max-resolution: 163dpi) {
 	.logo{
 		background-image: url(../img/logoSmall.png);
@@ -128,6 +132,7 @@ h2 {
 	padding-left: 20px;
 }
 
+/* < iPhone */
 @media (max-width: 230px) {
 	.fbConnect {
 		background-image: none;
