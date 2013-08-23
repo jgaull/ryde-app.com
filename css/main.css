@@ -5,7 +5,7 @@
    ========================================================================== */
 
 /* iPhone */
-@media (max-width: 320px), (-webkit-max-device-pixel-ratio: 1), (max-resolution: 163dpi) {
+@media (max-width: 420px), (-webkit-max-device-pixel-ratio: 1), (max-resolution: 163dpi) {
 	html{
 		background: url(../img/bgSmall.jpg) no-repeat center center fixed;
 	}
@@ -106,8 +106,7 @@ body {
 @media (min-width: 421px), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 163dpi) {
 	.logo{
 		background-image: url(../img/logo.png);
-		width: 303px;
-		height: 91px;
+		background-size: contain;
 		max-width: 75%;
 	}
 }
@@ -126,6 +125,7 @@ body {
 #submissionForm, #confirmation {
 	position: absolute;
 	top: 0;
+	width: 100%;
 }
 
 h2 {
