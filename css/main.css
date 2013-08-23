@@ -120,6 +120,12 @@ body {
 	box-sizing: border-box;
 	text-align: left;
 	color: white;
+	position: relative;
+}
+
+#submissionForm, #confirmation {
+	position: absolute;
+	top: 0;
 }
 
 h2 {
@@ -202,6 +208,9 @@ h2 {
 	}
 }
 
+#emailForm {
+	height: 75px;
+}
 
 .form-group {
 	margin: 0;

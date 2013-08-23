@@ -15,10 +15,15 @@
 				$scope.error = false;
 
 				var userId = $.jStorage.get('userId');
-				if(userId !== undefined && userId !== null && userId.length > 0)
+				if(userId !== undefined && userId !== null && userId.length > 0) {
 					$scope.submitted = true;
-				else
+					$('#confirmation').css('display', 'inherit');
+					$('#submissionForm').css('display', 'none');
+				} else {
 					$scope.submitted = false;
+					$('#confirmation').css('display', 'none');
+					$('#submissionForm').css('display', 'inherit');
+				}
 
 				//create a new entry
 				$scope.submit = function(isFacebook) {
@@ -45,6 +50,13 @@
 								console.log("The object was saved successfully.");
 								$scope.submitted = true;
 								$scope.saving = false;
+								$('#confirmation').css('display', 'inherit');
+								$('#submissionForm').css('display', 'inherit');
+								$('.fadeOutLeft').removeClass('fadeOutLeft');
+								$('.fadeInRight').removeClass('fadeInRight');
+
+								$('#confirmation').addClass('animated fadeInRight');
+								$('#submissionForm').addClass('animated fadeOutLeft');
 								$scope.$digest();
 								$.jStorage.set('userId', savedUser.id);
 							},
@@ -88,6 +100,13 @@
 				$scope.resetForm = function() {
 					$scope.emailAddress = '';
 					$scope.submitted = false;
+					$('#confirmation').css('display', 'inherit');
+					$('#submissionForm').css('display', 'inherit');
+					$('.fadeOutLeft').removeClass('fadeOutLeft');
+					$('.fadeInRight').removeClass('fadeInRight');
+
+					$('#submissionForm').addClass('animated fadeInRight');
+					$('#confirmation').addClass('animated fadeOutLeft');
 					$.jStorage.set('userId', '');
 				};
 				$scope.unlinkFacebook = function() {

@@ -1,5 +1,5 @@
 <div id="submitter">
-	<div ng-hide="submitted">
+	<div id="submissionForm">
 		<h2>Sign up for early access</h2>
 		<button type="button" 
 				class="btn btn-primary btn-lg fbConnect"
@@ -9,7 +9,8 @@
 		<div class="orSeparator">
 			<span class="orBg">or</span>
 		</div>
-		<form ng-submit="submit()" 
+		<form id="emailForm"
+				ng-submit="submit()" 
 				ng-model="submissionForm" 
 				class="form-inline"
 				role="form">
@@ -33,7 +34,7 @@
 		</form>
 
 	</div>
-	<div ng-show="submitted">
+	<div id="confirmation">
 		<h2>Thank you! You will be notified when your account is ready.</h2>
 		<a ng-click="resetForm()"
 			class="reset">
