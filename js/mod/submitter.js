@@ -22,7 +22,7 @@
 
 				//create a new entry
 				$scope.submit = function(isFacebook) {
-					var User = Parse.Object.extend("_User");
+					var User = Parse.Object.extend("Email");
 
 					if($scope.emailAddress && $scope.emailAddress || isFacebook) {
 						$scope.saving = true;

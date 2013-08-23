@@ -34,7 +34,10 @@
 	</div>
 	<div ng-show="submitted">
 		<h2>Thank you! You will be notified when your account is ready.</h2>
-		<a ng-click="resetForm()">Sign up with a different email address</a>
+		<a ng-click="resetForm()"
+			class="reset">
+			Sign up with a different email address
+		</a>
 	</div>
 	<!-- <div ng-show="error && !saving">
 		<p>{{errorMessage}}</p>
