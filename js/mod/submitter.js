@@ -73,7 +73,7 @@
 					}
 
 					function facebookSignup(onSuccess) {
-						if(!Parse.FacebookUtils.isLinked(Parse.User.current()))
+						if(Parse.User.current() === null || !Parse.FacebookUtils.isLinked(Parse.User.current()))
 						{
 							Parse.FacebookUtils.logIn('email, user_location', {
 								success: function(user) {
