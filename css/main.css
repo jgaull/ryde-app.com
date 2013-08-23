@@ -36,7 +36,6 @@ body {
 .main {
 	width: 438px;
 	margin: 0 auto;
-	overflow-x: hidden;
 	height: 100%;
 }
 
@@ -45,6 +44,7 @@ body {
 	.main {
 		max-width: 90%;
 		margin: 0 auto;
+		overflow: hidden;
 	}
 }
 
