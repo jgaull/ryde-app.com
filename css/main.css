@@ -23,7 +23,6 @@ html {
 	-o-background-size: cover;
 	background-size: cover;
 	height: 100%;
-	overflow: hidden;
 }
 
 body {
@@ -32,6 +31,7 @@ body {
 	height: 100%;
 	font-family: 'Helvetica Nueue', 'Helvetica', serif;
 	color: white;
+	overflow-x: hidden;
 }
 
 .main {
@@ -47,7 +47,7 @@ body {
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
 	.main {
 		margin: 0 auto 0 30%;
 	}
@@ -75,7 +75,7 @@ body {
 /* iPhone */
 @media (max-width: 320px) {
 	#header h1 {
-	font-size: 33px;
+		font-size: 33px;
 	}
 }
 
@@ -89,8 +89,8 @@ body {
 .logo {
 	background-repeat: no-repeat;
 	background-position: top left;
-		width: 303px;
-		height: 91px;
+	width: 303px;
+	height: 91px;
 	display: block;
 }
 
@@ -138,6 +138,7 @@ h2 {
 @media (max-width: 320px) {
 	h2 {
 		font-size: 18px;
+		margin-top: 0;
 	}
 }
 
